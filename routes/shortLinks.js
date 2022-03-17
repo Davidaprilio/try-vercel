@@ -9,7 +9,6 @@ const Link = require('../models/Link.js')
 const Access = require('../models/Access.js')
 
 route.get('/:prefix', function(req, res) {
-  
   Link.findOne({ prefix: req.params.prefix })
   .then(result => {
       if (result) {
@@ -26,6 +25,10 @@ route.get('/:prefix', function(req, res) {
       }
     })
     .catch(error => res.status(500).json({error: error}))
+});
+
+router.get("/test/google", async (req, res) => {
+  return res.redirect('http://google.com');
 });
 
 module.exports = route;
