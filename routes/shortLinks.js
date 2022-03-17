@@ -1,7 +1,6 @@
 'use strict'
 var express = require('express');
 var route = express.Router();
-const os = require('os');
 
 
 // Models
@@ -27,7 +26,7 @@ route.get('/:prefix', function(req, res) {
     .catch(error => res.status(500).json({error: error}))
 });
 
-router.get("/test/google", async (req, res) => {
+route.get("/test/google", async (req, res) => {
   return res.redirect('http://google.com');
 });
 
