@@ -18,6 +18,10 @@ app.get('/', (req, res) => {
   res.send('<h3>Sek durung dadi ojo rene</h3><br><small>developer e sek males</small>')
 })
 
+app.get("/gdrive-share", async (req, res) => {
+  return res.redirect('https://drive.google.com/drive/folders/16Dv_fUfP4FaNSuz8xadoFjUqhGrgufvP?usp=sharing');
+});
+
 app.listen(port, () => {
   console.log(`App running on port ${port}`)
 })
